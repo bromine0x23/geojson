@@ -1,7 +1,7 @@
-# [GeoJson](https://github.com/bromine0x23/geojson)
+# [GeoJSON](https://github.com/bromine0x23/geojson)
 当前版本：`0.0.1`
 
-GeoJson 处理库，支持Jackson序列化
+GeoJSON 处理库，支持Jackson序列化
 
 ## 使用
 
