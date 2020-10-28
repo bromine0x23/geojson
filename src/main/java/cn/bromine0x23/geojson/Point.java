@@ -26,4 +26,14 @@ public class Point extends Geometry<Position> {
 		this(Position.of(longitude, latitude, altitude));
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 }

@@ -23,6 +23,16 @@ public class MultiPoint extends MultiGeometry<Position> {
 		super(members);
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	public void add(Point point) {
 		super.add(point);
 	}

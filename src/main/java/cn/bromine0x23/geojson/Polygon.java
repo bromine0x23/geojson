@@ -25,6 +25,16 @@ public class Polygon extends Geometry<List<List<Position>>> {
 		this(toCoordinates(positions));
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	@SafeVarargs
 	protected static List<List<Position>> toCoordinates(List<Position>... positions) {
 		List<List<Position>> coordinates = new ArrayList<>(positions.length);

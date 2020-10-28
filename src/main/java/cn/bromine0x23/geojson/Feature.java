@@ -29,6 +29,16 @@ public class Feature extends GeoJsonObject {
 	@JsonProperty("id")
 	private String id;
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	@SuppressWarnings("unchecked")
 	public <T> T getProperty(String key) {
 		return (T) properties.get(key);

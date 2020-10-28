@@ -21,6 +21,16 @@ public class FeatureCollection extends GeoJsonObject {
 	@JsonProperty("features")
 	private List<Feature> features = new ArrayList<>();
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	public void add(Feature feature) {
 		this.features.add(feature);
 	}

@@ -23,6 +23,16 @@ public class MultiLineString extends MultiGeometry<List<Position>> {
 		super(members);
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	public void add(LineString line) {
 		super.add(line);
 	}

@@ -27,6 +27,16 @@ public class LineString extends Geometry<List<Position>> {
 		this(toCoordinates(positions));
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	protected void assertCoordinates(@Nonnull List<Position> coordinates) {
 		if (coordinates.size() < 2) {
 			throw new IllegalArgumentException("The \"coordinates\" member of LineString should have two or more positions.");

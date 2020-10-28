@@ -23,6 +23,16 @@ public class MultiPolygon extends MultiGeometry<List<List<Position>>> {
 		super(members);
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	public void add(Polygon polygon) {
 		super.add(polygon);
 	}

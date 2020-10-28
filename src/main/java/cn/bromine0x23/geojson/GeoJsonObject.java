@@ -31,4 +31,8 @@ public abstract class GeoJsonObject {
 	 */
 	@JsonProperty("bbox")
 	private double[] bbox;
+
+	public abstract void accept(GeoJsonObjectConsumer consumer);
+
+	public abstract <T> T accept(GeoJsonObjectVisitor<T> visitor);
 }

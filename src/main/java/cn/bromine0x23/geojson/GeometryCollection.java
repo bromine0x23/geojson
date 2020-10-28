@@ -34,6 +34,16 @@ public class GeometryCollection extends GeoJsonObject {
 		}
 	}
 
+	@Override
+	public void accept(GeoJsonObjectConsumer consumer) {
+		consumer.consume(this);
+	}
+
+	@Override
+	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+
 	public void add(Geometry<?> geometry) {
 		geometries.add(geometry);
 	}
