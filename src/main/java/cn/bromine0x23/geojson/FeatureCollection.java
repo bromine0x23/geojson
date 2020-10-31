@@ -25,6 +25,11 @@ public class FeatureCollection extends GeoJSON implements Iterable<Feature> {
 	private List<Feature> features = new ArrayList<>();
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.FeatureCollection;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

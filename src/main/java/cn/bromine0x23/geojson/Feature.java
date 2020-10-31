@@ -30,6 +30,11 @@ public class Feature extends GeoJSON {
 	private String id;
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.Feature;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

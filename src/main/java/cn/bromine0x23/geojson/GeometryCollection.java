@@ -38,6 +38,11 @@ public class GeometryCollection extends GeoJSON implements Iterable<Geometry<?>>
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.GeometryCollection;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

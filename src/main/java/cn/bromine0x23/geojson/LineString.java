@@ -28,6 +28,11 @@ public class LineString extends Geometry<List<Position>> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.LineString;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

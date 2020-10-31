@@ -26,6 +26,7 @@ class PointTest extends GeoJsonObjectTest {
 		GeoJSON geojson = getObjectMapper().readValue(json, GeoJSON.class);
 
 		assertThat(geojson, isA(Point.class));
+		assertEquals(geojson.getType(), GeoJSONType.Point);
 
 		Point point = (Point) geojson;
 

@@ -24,6 +24,11 @@ public class MultiPoint extends MultiGeometry<Position> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.MultiPoint;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

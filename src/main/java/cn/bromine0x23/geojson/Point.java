@@ -27,6 +27,11 @@ public class Point extends Geometry<Position> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.Point;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

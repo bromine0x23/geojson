@@ -1,5 +1,6 @@
 package cn.bromine0x23.geojson;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -32,7 +33,8 @@ public abstract class GeoJSON {
 	@JsonProperty("bbox")
 	private double[] bbox;
 
-	public abstract void accept(GeoJsonObjectConsumer consumer);
+	@JsonIgnore
+	abstract GeoJSONType getType();
 
 	public abstract void accept(GeoJSONConsumer consumer);
 

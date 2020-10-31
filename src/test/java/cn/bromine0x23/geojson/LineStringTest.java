@@ -24,11 +24,12 @@ class LineStringTest extends GeoJsonObjectTest {
 	void testDeserialize() throws IOException {
 		String json = "{\"type\":\"LineString\",\"coordinates\":[[30,10],[10,30],[40,40]]}";
 
-		GeoJSON geoJsonObject = getObjectMapper().readValue(json, GeoJSON.class);
+		GeoJSON geojson = getObjectMapper().readValue(json, GeoJSON.class);
 
-		assertThat(geoJsonObject, isA(LineString.class));
+		assertThat(geojson, isA(LineString.class));
+		assertEquals(geojson.getType(), GeoJSONType.LineString);
 
-		LineString lineString = (LineString) geoJsonObject;
+		LineString lineString = (LineString) geojson;
 
 		assertEquals(
 			Arrays.asList(Position.of(30, 10), Position.of(10, 30), Position.of(40, 40)),

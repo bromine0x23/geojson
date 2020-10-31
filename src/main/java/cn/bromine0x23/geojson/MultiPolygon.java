@@ -24,6 +24,11 @@ public class MultiPolygon extends MultiGeometry<List<List<Position>>> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.MultiPolygon;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

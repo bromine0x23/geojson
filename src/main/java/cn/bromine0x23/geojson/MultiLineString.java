@@ -24,6 +24,11 @@ public class MultiLineString extends MultiGeometry<List<Position>> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.MultiLineString;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}

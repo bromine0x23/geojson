@@ -26,6 +26,11 @@ public class Polygon extends Geometry<List<List<Position>>> {
 	}
 
 	@Override
+	GeoJSONType getType() {
+		return GeoJSONType.Polygon;
+	}
+
+	@Override
 	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}
