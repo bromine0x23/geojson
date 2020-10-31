@@ -26,7 +26,7 @@ public class Feature extends GeoJSON {
 
 	@JsonProperty("geometry")
 	@JsonInclude
-	private Geometry<?> geometry;
+	private Geometry geometry;
 
 	@JsonProperty("id")
 	private String id;

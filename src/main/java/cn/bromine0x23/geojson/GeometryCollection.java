@@ -20,21 +20,21 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class GeometryCollection extends GeoJSON implements Iterable<Geometry<?>> {
+public class GeometryCollection extends Geometry implements Iterable<Geometry> {
 
 	@JsonProperty("geometries")
-	private List<Geometry<?>> geometries = new ArrayList<>();
+	private List<Geometry> geometries = new ArrayList<>();
 
 	protected GeometryCollection() {
 	}
 
-	public GeometryCollection(List<Geometry<?>> geometries) {
+	public GeometryCollection(List<Geometry> geometries) {
 		this.geometries = geometries;
 	}
 
-	public GeometryCollection(Geometry<?>... geometries) {
+	public GeometryCollection(Geometry... geometries) {
 		this();
-		for (Geometry<?> geometry : geometries) {
+		for (Geometry geometry : geometries) {
 			add(geometry);
 		}
 	}
@@ -56,11 +56,11 @@ public class GeometryCollection extends GeoJSON implements Iterable<Geometry<?>>
 
 	@Nonnull
 	@Override
-	public Iterator<Geometry<?>> iterator() {
+	public Iterator<Geometry> iterator() {
 		return geometries != null ? geometries.iterator() : Collections.emptyIterator();
 	}
 
-	public void add(Geometry<?> geometry) {
+	public void add(Geometry geometry) {
 		geometries.add(geometry);
 	}
 

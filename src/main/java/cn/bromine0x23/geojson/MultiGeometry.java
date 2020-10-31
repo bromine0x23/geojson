@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
  */
-public abstract class MultiGeometry<TCoordinatesMember> extends Geometry<List<TCoordinatesMember>> {
+public abstract class MultiGeometry<TCoordinatesMember> extends GeometryWithCoordinates<List<TCoordinatesMember>> {
 
 	protected MultiGeometry() {
 		super(new ArrayList<>());
@@ -18,9 +18,9 @@ public abstract class MultiGeometry<TCoordinatesMember> extends Geometry<List<TC
 	}
 
 	@SafeVarargs
-	protected MultiGeometry(Geometry<TCoordinatesMember>... geometries) {
+	protected MultiGeometry(GeometryWithCoordinates<TCoordinatesMember>... geometries) {
 		super();
-		for (Geometry<TCoordinatesMember> geometry : geometries) {
+		for (GeometryWithCoordinates<TCoordinatesMember> geometry : geometries) {
 			add(geometry);
 		}
 	}
@@ -30,7 +30,7 @@ public abstract class MultiGeometry<TCoordinatesMember> extends Geometry<List<TC
 		super(toCoordinates(members));
 	}
 
-	protected void add(Geometry<TCoordinatesMember> geometry) {
+	protected void add(GeometryWithCoordinates<TCoordinatesMember> geometry) {
 		coordinates.add(geometry.getCoordinates());
 	}
 

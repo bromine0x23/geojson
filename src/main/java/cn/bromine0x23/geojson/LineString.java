@@ -14,7 +14,7 @@ import java.util.List;
  * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.4">RFC 7946 - The GeoJSON Format</a>
  */
 @EqualsAndHashCode(callSuper = true)
-public class LineString extends Geometry<List<Position>> {
+public class LineString extends GeometryWithCoordinates<List<Position>> {
 
 	protected LineString() {
 		super(new ArrayList<>());

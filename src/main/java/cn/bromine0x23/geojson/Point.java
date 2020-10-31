@@ -1,6 +1,7 @@
 package cn.bromine0x23.geojson;
 
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.annotation.Nonnull;
 
@@ -10,11 +11,9 @@ import javax.annotation.Nonnull;
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
  * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.2">RFC 7946 - The GeoJSON Format</a>
  */
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Point extends Geometry<Position> {
-
-	protected Point() {
-	}
+public class Point extends GeometryWithCoordinates<Position> {
 
 	public Point(@Nonnull Position position) {
 		super(position);

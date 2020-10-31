@@ -13,9 +13,10 @@ import java.util.List;
  * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.6">RFC 7946 - The GeoJSON Format</a>
  */
 @EqualsAndHashCode(callSuper = true)
-public class Polygon extends Geometry<List<List<Position>>> {
+public class Polygon extends GeometryWithCoordinates<List<List<Position>>> {
 
 	protected Polygon() {
+		super(new ArrayList<>());
 	}
 
 	public Polygon(List<List<Position>> coordinates) {
