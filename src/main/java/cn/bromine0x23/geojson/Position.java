@@ -7,8 +7,10 @@ import cn.bromine0x23.geojson.jackson.PositionSerializer;
 import lombok.Data;
 
 /**
+ * GeoJSON 坐标（Position）
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
- * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.1">RFC7946 - The GeoJSON Format</a>
+ * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.1">RFC 7946 - The GeoJSON Format</a>
  */
 @JsonSerialize(using = PositionSerializer.class)
 @JsonDeserialize(using = PositionDeserializer.class)

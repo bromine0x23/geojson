@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * GeoJSON 几何图形
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
  */
 @EqualsAndHashCode(callSuper = true)

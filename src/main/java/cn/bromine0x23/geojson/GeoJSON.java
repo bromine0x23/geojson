@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 
 /**
+ * GeoJSON 对象
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
@@ -28,6 +30,8 @@ import lombok.Data;
 public abstract class GeoJSON {
 
 	/**
+	 * 包围盒
+	 *
 	 * @see <a href="https://tools.ietf.org/html/rfc7946#section-5">RFC7946 - The GeoJSON Format</a>
 	 */
 	@JsonProperty("bbox")

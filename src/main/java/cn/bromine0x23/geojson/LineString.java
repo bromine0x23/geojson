@@ -8,8 +8,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * GeoJSON 线段（LineString）
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
- * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.4">RFC7946 - The GeoJSON Format</a>
+ * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.4">RFC 7946 - The GeoJSON Format</a>
  */
 @EqualsAndHashCode(callSuper = true)
 public class LineString extends Geometry<List<Position>> {

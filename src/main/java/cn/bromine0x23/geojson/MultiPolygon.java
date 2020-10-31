@@ -6,8 +6,10 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
+ * GeoJSON 多边形集合（MultiPolygon）
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
- * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.7">RFC7946 - The GeoJSON Format</a>
+ * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.1.7">RFC 7946 - The GeoJSON Format</a>
  */
 @EqualsAndHashCode(callSuper = true)
 public class MultiPolygon extends MultiGeometry<List<List<Position>>> {

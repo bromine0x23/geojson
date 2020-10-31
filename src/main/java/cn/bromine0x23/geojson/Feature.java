@@ -10,8 +10,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * GeoJSON 特征（Feature）
+ *
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
- * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.2">RFC7946 - The GeoJSON Format</a>
+ * @see <a href="https://tools.ietf.org/html/rfc7946#section-3.2">RFC 7946 - The GeoJSON Format</a>
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
