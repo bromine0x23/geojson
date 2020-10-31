@@ -16,18 +16,18 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class FeatureCollection extends GeoJsonObject {
+public class FeatureCollection extends GeoJSON {
 
 	@JsonProperty("features")
 	private List<Feature> features = new ArrayList<>();
 
 	@Override
-	public void accept(GeoJsonObjectConsumer consumer) {
+	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}
 
 	@Override
-	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+	public <T> T accept(GeoJSONVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
 

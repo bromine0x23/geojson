@@ -9,7 +9,7 @@ import lombok.Setter;
  * @author <a href="mailto:bromine0x23@163.com">Bromine0x23</a>
  */
 @EqualsAndHashCode(callSuper = true)
-public abstract class Geometry<TCoordinates> extends GeoJsonObject {
+public abstract class Geometry<TCoordinates> extends GeoJSON {
 
 	@JsonProperty("coordinates")
 	@Getter

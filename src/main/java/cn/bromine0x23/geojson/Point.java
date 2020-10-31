@@ -27,12 +27,12 @@ public class Point extends Geometry<Position> {
 	}
 
 	@Override
-	public void accept(GeoJsonObjectConsumer consumer) {
+	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}
 
 	@Override
-	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+	public <T> T accept(GeoJSONVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
 

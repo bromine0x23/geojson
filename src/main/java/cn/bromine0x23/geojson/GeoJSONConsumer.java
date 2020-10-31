@@ -3,7 +3,7 @@ package cn.bromine0x23.geojson;
 /**
  * @see java.util.function.Consumer
  */
-public interface GeoJsonObjectConsumer {
+public interface GeoJSONConsumer {
 
 	default void consume(Point point) {}
 

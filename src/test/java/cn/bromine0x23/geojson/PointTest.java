@@ -23,11 +23,11 @@ class PointTest extends GeoJsonObjectTest {
 	void testDeserialize() throws IOException {
 		String json = "{\"type\":\"Point\",\"coordinates\":[30,10]}";
 
-		GeoJsonObject geoJsonObject = getObjectMapper().readValue(json, GeoJsonObject.class);
+		GeoJSON geojson = getObjectMapper().readValue(json, GeoJSON.class);
 
-		assertThat(geoJsonObject, isA(Point.class));
+		assertThat(geojson, isA(Point.class));
 
-		Point point = (Point) geoJsonObject;
+		Point point = (Point) geojson;
 
 		assertEquals(Position.of(30, 10),  point.getCoordinates());
 	}

@@ -1,6 +1,6 @@
 package cn.bromine0x23.geojson;
 
-public interface GeoJsonObjectVisitor<T> {
+public interface GeoJSONVisitor<T> {
 
 	default T visit(Point point) { return null; }
 

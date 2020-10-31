@@ -24,7 +24,7 @@ import lombok.Data;
 })
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public abstract class GeoJsonObject {
+public abstract class GeoJSON {
 
 	/**
 	 * @see <a href="https://tools.ietf.org/html/rfc7946#section-5">RFC7946 - The GeoJSON Format</a>
@@ -34,5 +34,7 @@ public abstract class GeoJsonObject {
 
 	public abstract void accept(GeoJsonObjectConsumer consumer);
 
-	public abstract <T> T accept(GeoJsonObjectVisitor<T> visitor);
+	public abstract void accept(GeoJSONConsumer consumer);
+
+	public abstract <T> T accept(GeoJSONVisitor<T> visitor);
 }

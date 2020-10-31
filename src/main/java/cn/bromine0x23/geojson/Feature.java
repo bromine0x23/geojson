@@ -16,7 +16,7 @@ import java.util.Map;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Feature extends GeoJsonObject {
+public class Feature extends GeoJSON {
 
 	@JsonProperty("properties")
 	@JsonInclude
@@ -30,12 +30,12 @@ public class Feature extends GeoJsonObject {
 	private String id;
 
 	@Override
-	public void accept(GeoJsonObjectConsumer consumer) {
+	public void accept(GeoJSONConsumer consumer) {
 		consumer.consume(this);
 	}
 
 	@Override
-	public <T> T accept(GeoJsonObjectVisitor<T> visitor) {
+	public <T> T accept(GeoJSONVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
 
