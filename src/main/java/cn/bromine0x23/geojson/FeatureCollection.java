@@ -5,8 +5,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -16,7 +19,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class FeatureCollection extends GeoJSON {
+public class FeatureCollection extends GeoJSON implements Iterable<Feature> {
 
 	@JsonProperty("features")
 	private List<Feature> features = new ArrayList<>();
@@ -31,6 +34,12 @@ public class FeatureCollection extends GeoJSON {
 		return visitor.visit(this);
 	}
 
+	@Nonnull
+	@Override
+	public Iterator<Feature> iterator() {
+		return features != null ? features.iterator() : Collections.emptyIterator();
+	}
+
 	public void add(Feature feature) {
 		this.features.add(feature);
 	}
@@ -38,4 +47,5 @@ public class FeatureCollection extends GeoJSON {
 	public void addAll(Collection<Feature> features) {
 		this.features.addAll(features);
 	}
+
 }

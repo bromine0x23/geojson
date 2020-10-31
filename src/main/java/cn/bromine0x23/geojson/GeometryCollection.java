@@ -5,7 +5,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -15,7 +18,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class GeometryCollection extends GeoJSON {
+public class GeometryCollection extends GeoJSON implements Iterable<Geometry<?>> {
 
 	@JsonProperty("geometries")
 	private List<Geometry<?>> geometries = new ArrayList<>();
@@ -42,6 +45,12 @@ public class GeometryCollection extends GeoJSON {
 	@Override
 	public <T> T accept(GeoJSONVisitor<T> visitor) {
 		return visitor.visit(this);
+	}
+
+	@Nonnull
+	@Override
+	public Iterator<Geometry<?>> iterator() {
+		return geometries != null ? geometries.iterator() : Collections.emptyIterator();
 	}
 
 	public void add(Geometry<?> geometry) {
